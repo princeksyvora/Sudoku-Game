@@ -1,0 +1,56 @@
+body{
+    background-image: url(my-bg.jpg);
+    color:white;
+    text-align: center;
+ }
+ h1{
+     margin-top: 0%;
+     text-align: CENTER;
+     font-family: CURSIVE;
+     font-size: XXX-LARGE;
+ }
+
+ #main{
+     height: 630px;
+     width: 630px;
+     border: solid yellow 5px;
+     display: flex;
+     flex-wrap: wrap;
+     margin: 0 auto;
+     
+ }
+ .cell{
+     height: 68px;
+     width: 68px;
+     border: solid white 1px;
+     text-align: center;
+     background-color: #333333;
+     text-align: center;
+     font-size: x-large;
+     font-weight: bold;
+ }
+ input{
+     height: 66px;
+     width: 66px;
+     border: none;
+     text-align: center;
+     font-size: x-large;
+     font-weight: bold;
+     background-color: #333333;
+     color: white;
+ }
+ button{
+     margin: 25px 10px 0px 10px;
+     height: 70px;
+     width: 150px;
+     font-size: 20px;
+     font-weight: bold;
+     background-color: rgb(51, 138, 225);
+     border: solid 3px black;
+     color: white;
+     cursor: pointer;
+ }
+
+
+ 
+ 
