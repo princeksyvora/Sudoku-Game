@@ -50,6 +50,12 @@ body{
      color: white;
      cursor: pointer;
  }
+#timer{
+     text-align: center;
+     margin: 25px 5px 5px 10px;
+     font-weight: bold;
+ }
+
 
 
  
