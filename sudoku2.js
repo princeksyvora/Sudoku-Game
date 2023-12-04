@@ -163,7 +163,7 @@ function generateSudoku(N) {
         fillDiagonal(mtrx, N, M);
         fillRemaining(mtrx, N, M);
         Fmtrx = deepCopyMatrix(mtrx);
-        // console.log("copied matrix", Fmtrx);
+        console.log("copied matrix", Fmtrx);
         removeKDigits(mtrx);
         Fmtrx2 = deepCopyMatrix(mtrx);
         // console.log("copied matrix2", Fmtrx2);
@@ -193,10 +193,24 @@ sudokuContainer.addEventListener('input', function(event) {
         }
     }
 });
-    
+ 
+let startTime;
+let timerInterval;
+
+function updateTimer(){
+    const currentTime = new Date().getTime();
+    const elapsedTime = currentTime - startTime;
+    const minutes = Math.floor(elapsedTime / 60000);
+    const seconds = Math.floor((elapsedTime % 60000) / 1000);
+    const formattedTime = `${minutes.toString().padStart(2, '0')}:${seconds.toString().padStart(2, '0')}`;
+    document.getElementById('timer').innerText = `Timer: ${formattedTime}`;
+}
+
 function newGame(){
- const N = 9;
- const sudoku = generateSudoku(N);
+    startTime= new Date().getTime();
+    timerInterval = setInterval(updateTimer, 1000);
+    const N = 9;
+    const sudoku = generateSudoku(N);
     
 //  Printing Sudoku
     for (let i = 0; i < N; i++) {
@@ -226,6 +240,7 @@ function is3x3GridFilled(Fmtrx2, startRow, startCol) {
 }
 
 function checkResult() {
+    clearInterval(timerInterval);
     function check3x3GridsFilled(Fmtrx2) {
         for (let i = 0; i < 9; i += 3) {
             for (let j = 0; j < 9; j += 3) {
@@ -238,6 +253,9 @@ function checkResult() {
     }
 
     if (check3x3GridsFilled(Fmtrx2)) {
-        alert("Hurray! You did it! Congratulations!");
+        alert("Hurray! You did it! Congratulations !!");
+    }
+    else{
+        alert("You didn't filled the grid completely !! ");
     }
 }
